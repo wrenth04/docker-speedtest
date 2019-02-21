@@ -24,6 +24,8 @@ import socket
 import timeit
 import platform
 import threading
+import ssl
+
 
 __version__ = '0.3.4'
 
@@ -36,6 +38,7 @@ scheme = 'http'
 
 # Used for bound_interface
 socket_socket = socket.socket
+ssl._create_default_https_context = ssl._create_unverified_context
 
 try:
     import xml.etree.cElementTree as ET
